@@ -25,7 +25,7 @@ export default async function Home({ searchParams }: HomeProps) {
 
         <div className="flex flex-wrap items-center justify-center ">
           {
-            allCharacters?.map((item, index: number) => (
+            allCharacters?.map((item:any, index: number) => (
               <Cards character={item} key={index} />
             ))
           }

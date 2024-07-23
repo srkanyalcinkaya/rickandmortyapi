@@ -14,15 +14,10 @@ export async function getData(filters: FilterProps) {
 
 
 export const updateSearchParams = (data: SearchParamsProps) => {
+const searchParams = new URLSearchParams(window.location.search);
 
-    // Get the current URL search params
-    const searchParams = new URLSearchParams(window.location.search);
-
-    // Set the specified search parameter to the given value
-    searchParams.set(data.title, data.value);
-
-    // Set the specified search parameter to the given value
-    const newPathname = `${window.location.pathname}?${searchParams.toString()}`;
+   searchParams.set(data.title, data.value);
+const newPathname = `${window.location.pathname}?${searchParams.toString()}`;
 
     return newPathname;
 };
